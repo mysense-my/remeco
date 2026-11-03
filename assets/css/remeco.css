@@ -1,0 +1,15 @@
+/* Remeco: rules on top of the template's CSS. Colours only, plus sizing for the swapped logo and film. */
+:root{--primary-text:#0d2e6e;--bg-primary:#0d2e6e;--primary-low-opacity:#0d2e6eb3;--border-color:#0d2e6e33;
+  --line-color:#0d2e6e33;--highlight-color:#00c18c;--btn-hover-border:#00c18c;--primary-bg:#e9eef6;--remeco-green:#00c18c}
+/* buttons: green fill takes navy ink (white on #00C18C is 2.3:1) */
+.main-button,.main-button .button-text,.cookie-notice-inner .main-button .button-text{color:#0d2e6e}
+.cookie-notice-inner{color:#0d2e6e}
+.cookie-notice-inner .text a{color:#0d2e6e}
+a.main-button.secondary-btn .button-text{color:var(--primary-text)}
+/* swapped logo: the header SVG keeps the template's sizing; the footer logo was an <img>, now inline SVG */
+footer .logo svg{width:208px;height:54px;max-width:100%}
+/* long email addresses in the contact band wrap instead of clipping */
+.contact-1-text-link{overflow-wrap:anywhere}
+/* mobile/tablet film: the template's Lottie is a frame sequence; same frames, same box */
+.mobile-video .rm-frame{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:none}
+.mobile-video .rm-frame.on{display:block}
