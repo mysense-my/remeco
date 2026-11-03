@@ -10,6 +10,22 @@ a.main-button.secondary-btn .button-text{color:var(--primary-text)}
 footer .logo svg{width:208px;height:54px;max-width:100%}
 /* long email addresses in the contact band wrap instead of clipping */
 .contact-1-text-link{overflow-wrap:anywhere}
+/* Product imagery is never cut off (client rule: container ratio = image ratio). The template fills these
+   boxes with object-fit:cover and their shapes change by breakpoint, which cropped the packshots. */
+.product-detail-banner .product-images .product-img img{object-fit:contain!important;background:#fff}
+/* template forces .private-product-slider img to 0.8 + cover with !important; packshots are square */
+.private-products .private-product-slider .swiper-slide img{aspect-ratio:1/1!important;object-fit:contain!important}
+.section-our-services .listing-2-image{height:auto!important;aspect-ratio:4/5}
+.section-our-services .listing-2-image img.cover-image{object-fit:contain}
+.section-blogs .blog-thumb-background img{object-fit:contain;object-position:center top}
+.section-blogs .blog-gradient-color{display:none}
+@media (max-width:991px){
+  /* hero product shot under the headline, whole, at its own 16:9 */
+  .page-template-private-label .home-hero-1 .bg-image{background-image:url(../img/hero-about-m.jpg)!important}
+  .page-template-solution .home-hero-1 .bg-image{background-image:url(../img/hero-where-m.jpg)!important}
+  .page-template-private-label .home-hero-1 .bg-image,.page-template-solution .home-hero-1 .bg-image{background-size:100% auto!important;background-position:center bottom!important;background-repeat:no-repeat!important}
+  .page-template-private-label .home-hero-1,.page-template-solution .home-hero-1{padding-bottom:56.25vw}
+}
 /* mobile/tablet film: the template's Lottie is a frame sequence; same frames, same box */
 .mobile-video .rm-frame{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:none}
 .mobile-video .rm-frame.on{display:block}
